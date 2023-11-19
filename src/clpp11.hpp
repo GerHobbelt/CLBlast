@@ -279,8 +279,8 @@ class Device {
   std::vector<size_t> MaxWorkItemSizes() const {
     return GetInfoVector<size_t>(CL_DEVICE_MAX_WORK_ITEM_SIZES);
   }
-  unsigned long LocalMemSize() const {
-    return static_cast<unsigned long>(GetInfo<cl_ulong>(CL_DEVICE_LOCAL_MEM_SIZE));
+  size_t LocalMemSize() const {
+    return static_cast<size_t>(GetInfo<cl_ulong>(CL_DEVICE_LOCAL_MEM_SIZE));
   }
 
   std::string Capabilities() const { return GetInfoString(CL_DEVICE_EXTENSIONS); }
