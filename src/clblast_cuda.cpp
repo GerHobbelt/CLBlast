@@ -15,6 +15,8 @@
 
 #include <string>
 
+#if CUDA_API
+
 #include "routines/routines.hpp"
 #include "clblast_cuda.h"
 
@@ -2715,3 +2717,5 @@ template StatusCode PUBLIC_API GemmTempBufferSize<half>(const Layout, const Tran
 
 // =================================================================================================
 } // namespace clblast
+
+#endif
