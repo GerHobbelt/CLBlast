@@ -18,20 +18,13 @@
 #include <chrono>
 #include <vector>
 
-#ifdef OPENCL_API
-
-#define CL_TARGET_OPENCL_VERSION 110
-#include "clblast.h"
-
-#elif CUDA_API
+#if CUDA_API
 
 // Includes the CUDA driver API
 #include <cuda.h>
 
 // Includes the CLBlast library
 #include <clblast_cuda.h>
-
-#endif
 
 // =================================================================================================
 
@@ -95,3 +88,5 @@ int main() {
 }
 
 // =================================================================================================
+
+#endif

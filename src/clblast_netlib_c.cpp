@@ -15,6 +15,8 @@
 
 #include <cstdlib>
 
+#define CL_USE_DEPRECATED_OPENCL_1_2_APIS
+
 #include "clblast_netlib_c.h"
 #include "clblast.h"
 #include "utilities/utilities.hpp"

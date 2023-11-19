@@ -24,9 +24,14 @@
 
 // Includes the C++ OpenCL API. If not yet available, it can be found here:
 // https://raw.githubusercontent.com/KhronosGroup/OpenCL-CLHPP/main/include/CL/opencl.hpp
+#ifndef CL_TARGET_OPENCL_VERSION
 #define CL_HPP_TARGET_OPENCL_VERSION 120
 #define CL_HPP_MINIMUM_OPENCL_VERSION 120
 #define CL_TARGET_OPENCL_VERSION 120
+#else
+#define CL_HPP_TARGET_OPENCL_VERSION    CL_TARGET_OPENCL_VERSION
+#define CL_HPP_MINIMUM_OPENCL_VERSION   CL_TARGET_OPENCL_VERSION
+#endif
 #include "opencl.hpp"
 
 // Includes the CLBlast library

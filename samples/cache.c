@@ -20,7 +20,9 @@
 #include <string.h>
 #include <time.h>
 
+#ifndef CL_TARGET_OPENCL_VERSION
 #define CL_TARGET_OPENCL_VERSION 120
+#endif
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS // to disable deprecation warnings
 
 // Includes the CLBlast library (C interface)
