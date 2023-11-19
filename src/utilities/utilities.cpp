@@ -132,6 +132,7 @@ std::string ToString(Layout value) {
   switch(value) {
     case Layout::kRowMajor: return ToString(static_cast<int>(value))+" (row-major)";
     case Layout::kColMajor: return ToString(static_cast<int>(value))+" (col-major)";
+	default: return "(???)";
   }
 }
 template <>
@@ -140,6 +141,7 @@ std::string ToString(Transpose value) {
     case Transpose::kNo: return ToString(static_cast<int>(value))+" (regular)";
     case Transpose::kYes: return ToString(static_cast<int>(value))+" (transposed)";
     case Transpose::kConjugate: return ToString(static_cast<int>(value))+" (conjugate)";
+	default: return "(???)";
   }
 }
 template <>
@@ -147,6 +149,7 @@ std::string ToString(Side value) {
   switch(value) {
     case Side::kLeft: return ToString(static_cast<int>(value))+" (left)";
     case Side::kRight: return ToString(static_cast<int>(value))+" (right)";
+	default: return "(???)";
   }
 }
 template <>
@@ -154,6 +157,7 @@ std::string ToString(Triangle value) {
   switch(value) {
     case Triangle::kUpper: return ToString(static_cast<int>(value))+" (upper)";
     case Triangle::kLower: return ToString(static_cast<int>(value))+" (lower)";
+	default: return "(???)";
   }
 }
 template <>
@@ -161,6 +165,7 @@ std::string ToString(Diagonal value) {
   switch(value) {
     case Diagonal::kUnit: return ToString(static_cast<int>(value))+" (unit)";
     case Diagonal::kNonUnit: return ToString(static_cast<int>(value))+" (non-unit)";
+	default: return "(???)";
   }
 }
 template <>
@@ -172,6 +177,7 @@ std::string ToString(Precision value) {
     case Precision::kComplexSingle: return ToString(static_cast<int>(value))+" (complex-single)";
     case Precision::kComplexDouble: return ToString(static_cast<int>(value))+" (complex-double)";
     case Precision::kAny: return ToString(static_cast<int>(value))+" (any)";
+	default: return "(???)";
   }
 }
 template <>
@@ -179,6 +185,7 @@ std::string ToString(KernelMode value) {
   switch(value) {
     case KernelMode::kCrossCorrelation: return ToString(static_cast<int>(value))+" (cross-correlation)";
     case KernelMode::kConvolution: return ToString(static_cast<int>(value))+" (convolution)";
+	default: return "(???)";
   }
 }
 template <>
@@ -385,6 +392,7 @@ size_t GetBytes(const Precision precision) {
     case Precision::kDouble: return 8;
     case Precision::kComplexSingle: return 8;
     case Precision::kComplexDouble: return 16;
+	default:
     case Precision::kAny: return -1;
   }
 }
