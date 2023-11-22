@@ -22,7 +22,7 @@
 // Just needed for 'Precision'
 #ifdef OPENCL_API
   #ifndef CL_TARGET_OPENCL_VERSION
-  #define CL_TARGET_OPENCL_VERSION 110
+  #define CL_TARGET_OPENCL_VERSION 120
   #endif
   #include "clblast.h"
 #elif CUDA_API

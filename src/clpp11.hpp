@@ -48,7 +48,7 @@
 
 // OpenCL
 #ifndef CL_TARGET_OPENCL_VERSION
-#define CL_TARGET_OPENCL_VERSION 110
+#define CL_TARGET_OPENCL_VERSION 120
 #endif
 #define CL_USE_DEPRECATED_OPENCL_1_1_APIS // to disable deprecation warnings
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS // to disable deprecation warnings
