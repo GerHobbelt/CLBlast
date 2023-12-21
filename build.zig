@@ -2,7 +2,6 @@ const std = @import("std");
 
 /// dummy OpenCL finder, no clue how to find it cross platform
 pub const OpenCL = struct {
-    build: *std.Build,
     include_path: []const u8,
     lib_path: []const u8,
 
@@ -26,7 +25,6 @@ pub const OpenCL = struct {
         }
         std.log.scoped(.OpenCl).debug("OCL headers/libs found", .{});
         return .{
-            .build = b,
             .include_path = b.pathJoin(&[_][]const u8{ root, "include" }),
             .lib_path = libp,
         };
