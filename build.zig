@@ -86,8 +86,6 @@ pub const ClBlast = struct {
         };
         var c = Helper{ .cblast = res, .lib = lib };
 
-        const cflags: [][]const u8 = &.{};
-        _ = cflags;
         if (options.amd_si_empty_kernel_workaround) lib.defineCMacro("DAMD_SI_EMPTY_KERNEL_WORKAROUND", null);
         switch (options.backend) {
             .opencl => |opencl| {
@@ -110,8 +108,9 @@ pub const ClBlast = struct {
         }
         if (options.verbose) lib.defineCMacro("VERBOSE", null);
         if (options.target.getOsTag() == .windows and options.shared_lib) lib.defineCMacro("CLBLAST_DLL", null);
-        lib.addSystemIncludePath(.{ .path = "include" });
-        lib.addSystemIncludePath(.{ .path = "src" });
+        lib.addIncludePath(.{ .path = thisPath() });
+        lib.addIncludePath(.{ .path = b.pathJoin(&.{ thisPath(), "src" }) });
+        lib.addIncludePath(.{ .path = b.pathJoin(&.{ thisPath(), "include" }) });
 
         // ==================================================================================================
 
