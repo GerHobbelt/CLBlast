@@ -237,7 +237,7 @@ pub fn build(b: *std.Build) void {
 
     // build sample program
     const exe = b.addExecutable(.{ .name = "sasum.c" });
-    exe.addCSourceFiles(&.{"samples/sasum.c"}, &.{});
+    exe.addCSourceFile(.{ .file = .{ .path = "samples/sasum.c" }, .flags = &.{} });
     exe.linkLibC();
     open_cl.link(exe);
     clblast.link(exe);

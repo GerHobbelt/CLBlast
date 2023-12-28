@@ -1,5 +1,11 @@
 .{
     .name = "clblast.build.zig",
-    .version = "1.6.1-0.1-zigv-11",
+    .version = "0.0.2",
+    .paths = .{
+        "src",
+        "build.zig",
+        "build.zig.zon",
+        "include",
+    },
     .dependencies = .{},
 }
